@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+<h4>{{ post.title }}</h4>
+<h6>{{ post.content }}</h6>
+<p>Date Created: {{ post.date_created }}</p>
+
+
+<ul>
+    {% for c in post.comment_set.all|dictsortreversed:"date_created" %}
+    <li>
+        <h6>{{ c.content }}</h6>
+        {{ c.date_created }}
+        <hr/>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'post:comment' post.id %}">Comment</a> 
+<br/>
+<a href="{% url 'post:update' post.id %}">Update</a> 
+{% endblock %}
+

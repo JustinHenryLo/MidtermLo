@@ -1,0 +1,12 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+<form action="{% url 'post:create' %}" method="POST">
+    {% csrf_token %}
+    <table>{{ post_form.as_table  }}</table>
+    <input type="submit" value="Post">
+    {{ post_form.errors }}
+</form>
+
+{% endblock %}

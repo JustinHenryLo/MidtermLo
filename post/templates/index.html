@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+    <ol>
+        {% for p in post|dictsortreversed:"date_created" %}
+        <li>
+            <a href="{% url 'post:detail' p.id %}">{{ p.title }}</a> 
+            <hr/>
+        </li>
+        {% endfor %}
+    </ol>
+    <a href="{% url 'post:create' %}">Create Post</a> 
+    
+    
+{% endblock %}
+

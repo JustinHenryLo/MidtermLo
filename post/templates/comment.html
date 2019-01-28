@@ -1,0 +1,12 @@
+{% extends 'base.html' %} 
+
+{% block body %}
+
+<form action="{% url 'post:comment' post_id %}" method="POST">
+    {% csrf_token %}
+    <table>{{ comment_form.as_table  }}</table>
+    <input type="submit" value="Comment">
+    {{ comment_form.errors }}
+</form>
+
+{% endblock %}
