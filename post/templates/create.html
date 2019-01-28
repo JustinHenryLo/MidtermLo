@@ -4,7 +4,8 @@
 
 <form action="{% url 'post:create' %}" method="POST">
     {% csrf_token %}
-    <table>{{ post_form.as_table  }}</table>
+    {{ post_form.title  }}
+    {{ post_form.content  }}
     <input type="submit" value="Post">
     {{ post_form.errors }}
 </form>
