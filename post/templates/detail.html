@@ -5,7 +5,7 @@
 <h4>{{ post.title }}</h4>
 <h6>{{ post.content }}</h6>
 <p>Date Created: {{ post.date_created }}</p>
-
+<p>Date Updated: {{ post.date_updated }}</p>
 
 <ul>
     {% for c in post.comment_set.all|dictsortreversed:"date_created" %}

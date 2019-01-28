@@ -40,7 +40,7 @@ def create(request):
     if(request.method == 'POST'):
         form = PostModelForm(request.POST)
         if(form.is_valid()):
-            form.save()
+            form.save()#this fucking returns the object it saves !!!!!!!!!!
             return redirect('post:index')
         else:
             context['post_form']=form
